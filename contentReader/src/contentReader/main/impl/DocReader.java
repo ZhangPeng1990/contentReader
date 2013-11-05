@@ -15,8 +15,4 @@ public class DocReader implements Reader {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
-	public void test(){
-		
-	}
 }
