@@ -5,7 +5,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 
-public class readTxt {
+public class readTest {
 
 	/**
      * 功能：Java读取txt文件的内容
