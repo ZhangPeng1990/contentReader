@@ -11,9 +11,10 @@ public class TestReader {
 
 	@Test
 	public void test(){
-		File file = new File("F:\\test\\test.pdf");
+		File file = new File("F:\\test\\test1.txt");
 		Reader r = ReaderFactory.initReader(file);
-		System.out.println(r);
+		int num = r.getWordNum();
+		System.out.println(num);
 	}
 	
 }

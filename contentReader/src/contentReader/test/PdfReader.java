@@ -12,31 +12,31 @@ import org.pdfbox.util.PDFTextStripper;
 public class PdfReader {
 	
 public void readFdf(String file) throws Exception {
-   // ÊÇ·ñÅÅĞò
+   // æ˜¯å¦æ’åº
    boolean sort = false;
-   // pdfÎÄ¼şÃû
+   // pdfæ–‡ä»¶å
    String pdfFile = file;
-   // ÊäÈëÎÄ±¾ÎÄ¼şÃû³Æ
+   // è¾“å…¥æ–‡æœ¬æ–‡ä»¶åç§°
    String textFile = null;
-   // ±àÂë·½Ê½
+   // ç¼–ç æ–¹å¼
    String encoding = "UTF-8";
-   // ¿ªÊ¼ÌáÈ¡Ò³Êı
+   // å¼€å§‹æå–é¡µæ•°
    int startPage = 1;
-   // ½áÊøÌáÈ¡Ò³Êı
+   // ç»“æŸæå–é¡µæ•°
    int endPage = Integer.MAX_VALUE;
-   // ÎÄ¼şÊäÈëÁ÷£¬Éú³ÉÎÄ±¾ÎÄ¼ş
+   // æ–‡ä»¶è¾“å…¥æµï¼Œç”Ÿæˆæ–‡æœ¬æ–‡ä»¶
    Writer output = null;
-   // ÄÚ´æÖĞ´æ´¢µÄPDF Document
+   // å†…å­˜ä¸­å­˜å‚¨çš„PDF Document
    PDDocument document = null;
    try {
     try {
-     // Ê×ÏÈµ±×÷Ò»¸öURLÀ´×°ÔØÎÄ¼ş£¬Èç¹ûµÃµ½Òì³£ÔÙ´Ó±¾µØÎÄ¼şÏµÍ³//È¥×°ÔØÎÄ¼ş
+     // é¦–å…ˆå½“ä½œä¸€ä¸ªURLæ¥è£…è½½æ–‡ä»¶ï¼Œå¦‚æœå¾—åˆ°å¼‚å¸¸å†ä»æœ¬åœ°æ–‡ä»¶ç³»ç»Ÿ//å»è£…è½½æ–‡ä»¶
      URL url = new URL(pdfFile);
-    //×¢Òâ²ÎÊıÒÑ²»ÊÇÒÔÇ°°æ±¾ÖĞµÄURL.¶øÊÇFile¡£
+    //æ³¨æ„å‚æ•°å·²ä¸æ˜¯ä»¥å‰ç‰ˆæœ¬ä¸­çš„URL.è€Œæ˜¯Fileã€‚
     document = PDDocument.load(pdfFile);
-     // »ñÈ¡PDFµÄÎÄ¼şÃû
+     // è·å–PDFçš„æ–‡ä»¶å
      String fileName = url.getFile();
-     // ÒÔÔ­À´PDFµÄÃû³ÆÀ´ÃüÃûĞÂ²úÉúµÄtxtÎÄ¼ş
+     // ä»¥åŸæ¥PDFçš„åç§°æ¥å‘½åæ–°äº§ç”Ÿçš„txtæ–‡ä»¶
      if (fileName.length() > 4) {
       File outputFile = new File(fileName.substring(0, fileName
         .length() - 4)
@@ -44,35 +44,35 @@ public void readFdf(String file) throws Exception {
       textFile = outputFile.getName();
      }
     } catch (MalformedURLException e) {
-     // Èç¹û×÷ÎªURL×°ÔØµÃµ½Òì³£Ôò´ÓÎÄ¼şÏµÍ³×°ÔØ
-   //×¢Òâ²ÎÊıÒÑ²»ÊÇÒÔÇ°°æ±¾ÖĞµÄURL.¶øÊÇFile¡£
+     // å¦‚æœä½œä¸ºURLè£…è½½å¾—åˆ°å¼‚å¸¸åˆ™ä»æ–‡ä»¶ç³»ç»Ÿè£…è½½
+   //æ³¨æ„å‚æ•°å·²ä¸æ˜¯ä»¥å‰ç‰ˆæœ¬ä¸­çš„URL.è€Œæ˜¯Fileã€‚
     document = PDDocument.load(pdfFile);
      if (pdfFile.length() > 4) {
       textFile = pdfFile.substring(0, pdfFile.length() - 4)
         + ".txt";
      }
     }
-    // ÎÄ¼şÊäÈëÁ÷£¬Ğ´ÈëÎÄ¼şµ¹textFile
+    // æ–‡ä»¶è¾“å…¥æµï¼Œå†™å…¥æ–‡ä»¶å€’textFile
     output = new OutputStreamWriter(new FileOutputStream(textFile),
       encoding);
-    // PDFTextStripperÀ´ÌáÈ¡ÎÄ±¾
+    // PDFTextStripperæ¥æå–æ–‡æœ¬
     PDFTextStripper stripper = null;
     stripper = new PDFTextStripper();
-    // ÉèÖÃÊÇ·ñÅÅĞò
+    // è®¾ç½®æ˜¯å¦æ’åº
     stripper.setSortByPosition(sort);
-    // ÉèÖÃÆğÊ¼Ò³
+    // è®¾ç½®èµ·å§‹é¡µ
     stripper.setStartPage(startPage);
-    // ÉèÖÃ½áÊøÒ³
+    // è®¾ç½®ç»“æŸé¡µ
     stripper.setEndPage(endPage);
-    // µ÷ÓÃPDFTextStripperµÄwriteTextÌáÈ¡²¢Êä³öÎÄ±¾
+    // è°ƒç”¨PDFTextStripperçš„writeTextæå–å¹¶è¾“å‡ºæ–‡æœ¬
     stripper.writeText(document, output);
    } finally {
     if (output != null) {
-     // ¹Ø±ÕÊä³öÁ÷
+     // å…³é—­è¾“å‡ºæµ
      output.close();
     }
     if (document != null) {
-     // ¹Ø±ÕPDF Document
+     // å…³é—­PDF Document
      document.close();
     }
    }
@@ -84,7 +84,7 @@ public static void main(String[] args) {
    // TODO Auto-generated method stub
    PdfReader pdfReader = new PdfReader();
    try {
-    // È¡µÃEÅÌÏÂµÄSpringGuide.pdfµÄÄÚÈİ
+    // å–å¾—Eç›˜ä¸‹çš„SpringGuide.pdfçš„å†…å®¹
     pdfReader.readFdf("F:\\test\\test.pdf");
     File file = new File("F:\\test\\test.txt");
     Main.read(file);

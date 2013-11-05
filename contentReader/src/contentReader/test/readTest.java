@@ -8,21 +8,21 @@ import java.io.InputStreamReader;
 public class readTest {
 
 	/**
-     * ¹¦ÄÜ£ºJava¶ÁÈ¡txtÎÄ¼şµÄÄÚÈİ
-     * ²½Öè£º1£ºÏÈ»ñµÃÎÄ¼ş¾ä±ú
-     * 2£º»ñµÃÎÄ¼ş¾ä±úµ±×öÊÇÊäÈëÒ»¸ö×Ö½ÚÂëÁ÷£¬ĞèÒª¶ÔÕâ¸öÊäÈëÁ÷½øĞĞ¶ÁÈ¡
-     * 3£º¶ÁÈ¡µ½ÊäÈëÁ÷ºó£¬ĞèÒª¶ÁÈ¡Éú³É×Ö½ÚÁ÷
-     * 4£ºÒ»ĞĞÒ»ĞĞµÄÊä³ö¡£readline()¡£
-     * ±¸×¢£ºĞèÒª¿¼ÂÇµÄÊÇÒì³£Çé¿ö
+     * åŠŸèƒ½ï¼šJavaè¯»å–txtæ–‡ä»¶çš„å†…å®¹
+     * æ­¥éª¤ï¼š1ï¼šå…ˆè·å¾—æ–‡ä»¶å¥æŸ„
+     * 2ï¼šè·å¾—æ–‡ä»¶å¥æŸ„å½“åšæ˜¯è¾“å…¥ä¸€ä¸ªå­—èŠ‚ç æµï¼Œéœ€è¦å¯¹è¿™ä¸ªè¾“å…¥æµè¿›è¡Œè¯»å–
+     * 3ï¼šè¯»å–åˆ°è¾“å…¥æµåï¼Œéœ€è¦è¯»å–ç”Ÿæˆå­—èŠ‚æµ
+     * 4ï¼šä¸€è¡Œä¸€è¡Œçš„è¾“å‡ºã€‚readline()ã€‚
+     * å¤‡æ³¨ï¼šéœ€è¦è€ƒè™‘çš„æ˜¯å¼‚å¸¸æƒ…å†µ
      * @param filePath
      */
     public static void readTxtFile(String filePath){
         try {
                 String encoding="GBK";
                 File file=new File(filePath);
-                if(file.isFile() && file.exists()){ //ÅĞ¶ÏÎÄ¼şÊÇ·ñ´æÔÚ
+                if(file.isFile() && file.exists()){ //åˆ¤æ–­æ–‡ä»¶æ˜¯å¦å­˜åœ¨
                     InputStreamReader read = new InputStreamReader(
-                    new FileInputStream(file),encoding);//¿¼ÂÇµ½±àÂë¸ñÊ½
+                    new FileInputStream(file),encoding);//è€ƒè™‘åˆ°ç¼–ç æ ¼å¼
                     BufferedReader bufferedReader = new BufferedReader(read);
                     String lineTxt = null;
                     while((lineTxt = bufferedReader.readLine()) != null){
@@ -30,10 +30,10 @@ public class readTest {
                     }
                     read.close();
         }else{
-            System.out.println("ÕÒ²»µ½Ö¸¶¨µÄÎÄ¼ş");
+            System.out.println("æ‰¾ä¸åˆ°æŒ‡å®šçš„æ–‡ä»¶");
         }
         } catch (Exception e) {
-            System.out.println("¶ÁÈ¡ÎÄ¼şÄÚÈİ³ö´í");
+            System.out.println("è¯»å–æ–‡ä»¶å†…å®¹å‡ºé”™");
             e.printStackTrace();
         }
      

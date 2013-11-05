@@ -7,11 +7,11 @@ import contentReader.main.Reader;
 public class DocReader implements Reader {
 
 	public DocReader(File file){
-		System.out.println("正在解析word文件");
+		System.out.println("姝ｅ湪瑙ｆ瀽word鏂囦欢...");
 	}
 	
 	@Override
-	public Long getWordNum() {
+	public Integer getWordNum() {
 		// TODO Auto-generated method stub
 		return null;
 	}

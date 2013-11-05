@@ -35,7 +35,7 @@ class Main {
 			System.out.println(m.group());
 			count ++ ;
 		}
-		System.out.println("×Ü¹²£º" + count + "¸öµ¥´Ê");
+		System.out.println("æ€»å…±ï¼š" + count + "ä¸ªå•è¯");
 	}
 	
 	public static void read(File file){
@@ -62,6 +62,6 @@ class Main {
 			System.out.println(m.group());
 			count ++ ;
 		}
-		System.out.println("×Ü¹²£º" + count + "¸öµ¥´Ê");
+		System.out.println("æ€»å…±ï¼š" + count + "ä¸ªå•è¯");
 	}
 }

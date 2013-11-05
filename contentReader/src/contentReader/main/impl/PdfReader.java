@@ -7,11 +7,11 @@ import contentReader.main.Reader;
 public class PdfReader implements Reader {
 
 	public PdfReader(File file){
-		System.out.println("正在解析pdf文件");
+		System.out.println("姝ｅ湪瑙ｆ瀽pdf鏂囦欢...");
 	}
 	
 	@Override
-	public Long getWordNum() {
+	public Integer getWordNum() {
 		// TODO Auto-generated method stub
 		return null;
 	}
