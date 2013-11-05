@@ -13,6 +13,7 @@ public class TestReader {
 	public void test(){
 		File file = new File("F:\\test\\test.pdf");
 		Reader r = ReaderFactory.initReader(file);
+		System.out.println(r);
 	}
 	
 }
